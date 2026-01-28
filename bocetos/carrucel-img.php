@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
-        .coverflow-carousel {
+.coverflow-carousel {
   position: relative;
   width: 100%;
   max-width: 520px;
