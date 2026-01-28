@@ -6,6 +6,8 @@
     <title>Salon de Belleza - Resalta tu Belleza</title>
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="estilos/carrusel-img.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
         :root {
             --color-primario: #d4a5c3;
@@ -543,9 +545,31 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="contenedor">
-            <h1 class="hero-titulo">Bienvenidos a</h1>
-            <h2 class="hero-subtitulo">Resalta tu Belleza, Siente la Diferencia</h2>
-            <a href="#contacto" class="btn-hero">Contactanos</a>
+        <!-- carrucel de imagenes -->    
+
+
+
+
+
+<div class="coverflow-carousel">
+  <div class="coverflow-track">
+    <img src="img/entrada.jpg" class="coverflow-img" alt="Imagen 1">
+    <img src="img/pasillo.jpeg" class="coverflow-img" alt="Imagen 2">
+    <img src="img/patio.jpg" class="coverflow-img" alt="Imagen 3">
+    <img src="img/patio2.jpg" class="coverflow-img" alt="Imagen 4">
+    <img src="img/vista-superior.jpg" class="coverflow-img" alt="Imagen 5">
+    <img src="img/vistasala.jpeg" class="coverflow-img" alt="Imagen 6">
+  </div>
+
+  <button class="coverflow-btn prev">&#10094;</button>
+  <button class="coverflow-btn next">&#10095;</button>
+</div>
+
+
+
+
+
+
         </div>
     </section>
 
@@ -603,6 +627,14 @@
                     <h3 class="servicio-titulo">Servicios Especiales</h3>
                     <p class="servicio-descripcion">Paquetes para novias, tratamientos corporales y servicios a domicilio para ocasiones especiales.</p>
                 </div>
+<!-- Agregar mas tarjetas de servicio segun sea necesario -->
+
+
+
+
+
+
+
             </div>
         </div>
     </section>
@@ -661,6 +693,15 @@
                         <p></p>
                     </div>
                 </div>
+
+                <!-- Agregar mas items segun sea necesario -->
+
+
+
+
+
+
+
             </div>
         </div>
     </section>
@@ -696,6 +737,12 @@
                 <div class="galeria-estilo-item">
                     <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Servicio spa" class="galeria-estilo-img">
                 </div>
+
+                <!-- Agregar mas items segun sea necesario -->
+
+
+
+
             </div>
         </div>
     </section>
@@ -816,5 +863,44 @@
             });
         });
     </script>
+
+<!-- script para carrucel img -->
+
+<script>
+    $(document).ready(function () {
+  const $imgs = $('.coverflow-img');
+  let current = 0;
+  let timer;
+
+  function update() {
+    $imgs.each(function (i) {
+      $(this).attr('class', 'coverflow-img');
+
+      if (i === current) $(this).addClass('active');
+      else if (i === (current - 1 + $imgs.length) % $imgs.length) $(this).addClass('left1');
+      else if (i === (current - 2 + $imgs.length) % $imgs.length) $(this).addClass('left2');
+      else if (i === (current + 1) % $imgs.length) $(this).addClass('right1');
+      else if (i === (current + 2) % $imgs.length) $(this).addClass('right2');
+    });
+  }
+
+  function next() {
+    current = (current + 1) % $imgs.length;
+    update();
+  }
+
+  function prev() {
+    current = (current - 1 + $imgs.length) % $imgs.length;
+    update();
+  }
+
+  $('.coverflow-btn.next').click(next);
+  $('.coverflow-btn.prev').click(prev);
+
+  timer = setInterval(next, 3500);
+  update();
+});
+
+</script>
 </body>
 </html>
