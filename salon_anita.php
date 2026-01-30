@@ -226,46 +226,81 @@
             margin-bottom: 20px;
         }
         
-        /* Galeria de Servicios */
-        .galeria-servicios-contenedor {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+/* Galeria de Servicios (ahora seccionada) */
+        /* Estilos antiguos para la galería estática eliminados. Usa .servicios-tabs y .servicios-content para la versión seccionada. */
+
+        /* ======== Galeria de Servicios - Seccionada ======== */
+        .servicios-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
         }
-        
-        .galeria-servicio-item {
-            border-radius: 10px;
+
+        .servicio-tab {
+            background: transparent;
+            border: 2px solid var(--color-accento);
+            color: var(--color-oscuro);
+            padding: 8px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.15s ease;
+            text-transform: none;
+        }
+
+        .servicio-tab.active {
+            background: var(--color-accento);
+            color: #fff;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+
+        .servicios-content {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .servicio-panel {
             overflow: hidden;
-            height: 300px;
-            position: relative;
+            max-height: 0;
+            transition: max-height 0.4s ease;
+            border-radius: 8px;
         }
-        
-        .galeria-servicio-img {
+
+        .servicio-panel.open {
+            padding: 12px;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .servicio-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .servicio-photo img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            border-radius: 8px;
             object-fit: cover;
-            transition: transform 0.5s;
+            max-height: 360px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
         }
-        
-        .galeria-servicio-item:hover .galeria-servicio-img {
-            transform: scale(1.1);
+
+        @media (max-width: 768px) {
+            .servicio-photo img { max-height: 280px; }
+            .servicio-tab { padding: 7px 12px; }
         }
-        
-        .galeria-servicio-texto {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 20px;
+
+        @media (max-width: 480px) {
+            .servicio-photo img { max-height: 220px; }
+            .servicio-photos { gap: 10px; }
         }
-        
-        .galeria-servicio-nombre {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-        
+
         /* Galeria de Estilo */
         .galeria-estilo-contenedor {
             display: grid;
@@ -288,6 +323,107 @@
         
         .galeria-estilo-item:hover .galeria-estilo-img {
             transform: scale(1.1);
+        }
+        
+        /*  promociones Section */
+        :root {
+            --color-promocion: #ff6bbc; /* color vistoso principal - cambia fácil */
+            --color-promocion-2: #ec2020; /* variante para degradado */
+            --promo-text-color: #ffffff;
+        }
+        
+        .promociones {
+            padding: 40px 0;
+            background: linear-gradient(90deg, rgba(255,107,129,0.06), rgba(255,209,224,0.03));
+        }
+        
+        .promociones .seccion-titulo {
+            color: var(--color-oscuro);
+            margin-bottom: 10px;
+        }
+        
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
+            align-items: stretch;
+            margin-top: 20px;
+        }
+        
+        .promo-card {
+            background: linear-gradient(135deg, var(--color-promocion), var(--color-promocion-2));
+            color: var(--promo-text-color);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 120px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+        
+        .promo-tag {
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.4px;
+            opacity: 0.95;
+            margin-bottom: 8px;
+        }
+        
+        .promo-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .promo-desc {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+        
+        .promo-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .promo-price {
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+        
+        .promo-btn {
+            background: rgba(255,255,255,0.12);
+            color: var(--promo-text-color);
+            border: 0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .promo-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        
+        /* Ajustes responsivos para promociones */
+        @media (max-width: 768px) {
+            .promociones { padding: 28px 0; }
+            .promo-card { padding: 14px; min-height: 110px; }
+        }
+        
+        @media (max-width: 480px) {
+            .promociones { padding: 20px 0; }
+            .promo-grid { gap: 12px; }
+            .promo-card { padding: 12px; min-height: 100px; }
         }
         
         /* Ubicacion Section */
@@ -494,17 +630,17 @@
 </style>
 </head>
 <body>
-    <!-- Botón de WhatsApp fijo -->
+    <!-- contacto de whatsssap-->
     <a href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="whatsapp-fijo">
         <i class="bi bi-whatsapp"></i>
     </a>
 
-    <!-- Header y Navegacion -->
+    <!-- header y navegacion -->
     <header class="header">
         <div class="contenedor">
             <nav class="nav-contenedor">
                 <div class="logo-area">
-                    <!-- Espacio reservado para el logo -->
+                    <!-- espacio reservado para el logo -->
                     <div class="logo-placeholder">
                         <img src="estilos/salon-anita.png" alt="Logo Salon Anita" class="logo-img">
                     </div>
@@ -542,7 +678,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+
+
+ 
+    <!-- inicio de caja de adaptacion  -->
     <section class="hero" id="inicio">
         <div class="contenedor">
         <!-- carrucel de imagenes -->    
@@ -551,25 +690,60 @@
 
 
 
-<div class="coverflow-carousel">
-  <div class="coverflow-track">
-    <img src="img/entrada.jpg" class="coverflow-img" alt="Imagen 1">
-    <img src="img/pasillo.jpeg" class="coverflow-img" alt="Imagen 2">
-    <img src="img/patio.jpg" class="coverflow-img" alt="Imagen 3">
-    <img src="img/patio2.jpg" class="coverflow-img" alt="Imagen 4">
-    <img src="img/vista-superior.jpg" class="coverflow-img" alt="Imagen 5">
-    <img src="img/vistasala.jpeg" class="coverflow-img" alt="Imagen 6">
-  </div>
+    <div class="coverflow-carousel">
+    <div class="coverflow-track">
+        <img src="img/entrada.jpg" class="coverflow-img" alt="Imagen 1">
+        <img src="img/pasillo.jpeg" class="coverflow-img" alt="Imagen 2">
+        <img src="img/patio.jpg" class="coverflow-img" alt="Imagen 3">
+        <img src="img/patio2.jpg" class="coverflow-img" alt="Imagen 4">
+        <img src="img/vista-superior.jpg" class="coverflow-img" alt="Imagen 5">
+        <img src="img/vistasala.jpeg" class="coverflow-img" alt="Imagen 6">
+    </div>
 
-  <button class="coverflow-btn prev">&#10094;</button>
-  <button class="coverflow-btn next">&#10095;</button>
-</div>
-
-
+    <button class="coverflow-btn prev">&#10094;</button>
+    <button class="coverflow-btn next">&#10095;</button>
+    </div>
 
 
 
 
+
+
+        </div>
+    </section>
+
+    <!-- Promociones Section -->
+    <section class="seccion promociones" id="promociones">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Promociones</h2>
+            <p class="seccion-subtitulo">Ofertas especiales que puedes acumular y modificar fácilmente</p>
+
+            <div class="promo-grid" id="promo-grid">
+                <!-- Contenido por defecto (se reemplaza si JS está activo) -->
+                <div class="promo-card">
+                    <div>
+                        <div class="promo-tag">20% OFF</div>
+                        <div class="promo-title">Cortes y Peinados</div>
+                        <div class="promo-desc">Aplica en servicios selectos durante el mes.</div>
+                    </div>
+                    <div class="promo-meta">
+                        <div class="promo-price">Desde 250 bs</div>
+                        <a href="#contacto" class="promo-btn">Reservar</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div>
+                        <div class="promo-tag">Paquete</div>
+                        <div class="promo-title">Novias</div>
+                        <div class="promo-desc">Incluye prueba y servicio el día del evento.</div>
+                    </div>
+                    <div class="promo-meta">
+                        <div class="promo-price">1800 bs</div>
+                        <a href="#contacto" class="promo-btn">Más info</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -643,58 +817,15 @@
     <section class="seccion galeria" id="galeria-servicios">
         <div class="contenedor">
             <h2 class="seccion-titulo">Galeria de Servicios</h2>
-            <p class="seccion-subtitulo">Descubre Nuestros Trabajos</p>
-            
-            <div class="galeria-servicios-contenedor">
-                <div class="galeria-servicio-item">
-                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Corte de pelo moderno" class="galeria-servicio-img">
-                    <div class="galeria-servicio-texto">
-                        <h4 class="galeria-servicio-nombre">Corte Moderno</h4>
-                        <p>Técnicas de corte actualizadas</p>
-                    </div>
-                </div>
-                
-                <div class="galeria-servicio-item">
-                    <img src="" alt="Maquillaje para novias" class="galeria-servicio-img">
-                    <div class="galeria-servicio-texto">
-                        <h4 class="galeria-servicio-nombre"></h4>
-                        <p>Belleza natural para tu día especial</p>
-                    </div>
-                </div>
-                
-                <div class="galeria-servicio-item">
-                    <img src="" alt="Uñas decoradas" class="galeria-servicio-img">
-                    <div class="galeria-servicio-texto">
-                        <h4 class="galeria-servicio-nombre"></h4>
-                        <p>Decoración artística y personalizada</p>
-                    </div>
-                </div>
-                
-                <div class="galeria-servicio-item">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Peinado elegante" class="galeria-servicio-img">
-                    <div class="galeria-servicio-texto">
-                        <h4 class="galeria-servicio-nombre">Peinados Elegantes</h4>
-                        <p>Estilos para eventos formales</p>
-                    </div>
-                </div>
-                
-                <div class="galeria-servicio-item">
-                    <img src="https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Coloración de cabello" class="galeria-servicio-img">
-                    <div class="galeria-servicio-texto">
-                        <h4 class="galeria-servicio-nombre">Coloracion Profesional</h4>
-                        <p>Técnicas de coloración avanzada</p>
-                    </div>
-                </div>
-                
-                <div class="galeria-servicio-item">
-                    <img src="" alt="Tratamiento facial" class="galeria-servicio-img">
-                    <div class="galeria-servicio-texto">
-                        <h4 class="galeria-servicio-nombre"></h4>
-                        <p></p>
-                    </div>
-                </div>
+            <p class="seccion-subtitulo">Selecciona una categoría para ver sus fotos</p>
 
-                <!-- Agregar mas items segun sea necesario -->
+            <div class="servicios-tabs" id="servicios-tabs" role="tablist" aria-label="Categorias de servicios">
+                <!-- Botones renderizados por JS -->
+            </div>
+
+            <div class="servicios-content" id="servicios-content">
+                <!-- Panels renderizados por JS; cada panel contiene fotos en vertical -->
+            </div> 
 
 
 
@@ -827,7 +958,7 @@
         </div>
     </footer>
 
-    <script>
+<script>
         // Menu hamburguesa
         const menuHamburguesa = document.getElementById('menu-hamburguesa');
         const navMenu = document.getElementById('nav-menu');
@@ -868,39 +999,202 @@
 
 <script>
     $(document).ready(function () {
-  const $imgs = $('.coverflow-img');
-  let current = 0;
-  let timer;
+        const $imgs = $('.coverflow-img');
+        let current = 0;
+        let timer;
 
-  function update() {
-    $imgs.each(function (i) {
-      $(this).attr('class', 'coverflow-img');
+        function update() {
+            $imgs.each(function (i) {
+            $(this).attr('class', 'coverflow-img');
 
-      if (i === current) $(this).addClass('active');
-      else if (i === (current - 1 + $imgs.length) % $imgs.length) $(this).addClass('left1');
-      else if (i === (current - 2 + $imgs.length) % $imgs.length) $(this).addClass('left2');
-      else if (i === (current + 1) % $imgs.length) $(this).addClass('right1');
-      else if (i === (current + 2) % $imgs.length) $(this).addClass('right2');
+            if (i === current) $(this).addClass('active');
+            else if (i === (current - 1 + $imgs.length) % $imgs.length) $(this).addClass('left1');
+            else if (i === (current - 2 + $imgs.length) % $imgs.length) $(this).addClass('left2');
+            else if (i === (current + 1) % $imgs.length) $(this).addClass('right1');
+            else if (i === (current + 2) % $imgs.length) $(this).addClass('right2');
+            });
+        }
+
+        function next() {
+            current = (current + 1) % $imgs.length;
+            update();
+        }
+
+        function prev() {
+            current = (current - 1 + $imgs.length) % $imgs.length;
+            update();
+        }
+
+        $('.coverflow-btn.next').click(next);
+        $('.coverflow-btn.prev').click(prev);
+
+        timer = setInterval(next, 3500);
+        update();
+    });
+
+</script>
+
+<!-- Script para renderizar promociones desde un arreglo (facil de modificar) -->
+<script>
+  (function(){
+    const promos = [
+      { tag: '20% OFF', title: 'Cortes y Peinados', desc: 'Aplica en servicios selectos durante el mes.', price: 'Desde $250', cta: 'Reservar', ctaHref: '#contacto' },
+      { tag: 'Paquete', title: 'Novias', desc: 'Incluye prueba y servicio el día del evento.', price: '$1800', cta: 'Más info', ctaHref: '#contacto' }
+      // Añade o quita objetos aqui para modificar las promociones facilmente
+    ];
+
+    function renderPromos(list){
+      const container = document.getElementById('promo-grid');
+      if(!container) return;
+      container.innerHTML = ''; // limpiar contenido por defecto
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'promo-card';
+        card.innerHTML = `
+          <div>
+            <div class="promo-tag">${escapeHTML(p.tag)}</div>
+            <div class="promo-title">${escapeHTML(p.title)}</div>
+            <div class="promo-desc">${escapeHTML(p.desc)}</div>
+          </div>
+          <div class="promo-meta">
+            <div class="promo-price">${escapeHTML(p.price)}</div>
+            <a class="promo-btn" href="${escapeAttr(p.ctaHref || '#contacto')}">${escapeHTML(p.cta || 'Detalles')}</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function escapeHTML(s){ return String(s||'').replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m]; }); }
+    function escapeAttr(s){ return String(s||'').replace(/"/g, '&quot;'); }
+
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => renderPromos(promos));
+    else renderPromos(promos);
+
+    // exposicion util para depuracion/modificacion desde consola
+    window.__promociones = { list: promos, render: renderPromos }; // IMPORTANTE: no uses en la produccion cuidado pablo
+  })();
+</script>
+
+<script>
+(function($){
+  const sections = [
+    { id: 'peinados', label: 'Peinados', photos: [
+        'https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+      ]
+    },
+    { id: 'unas', label: 'Uñas', photos: [
+        'https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+      ]
+    },
+    { id: 'maquillaje', label: 'Maquillaje', photos: [
+        'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+      ]
+    },
+    { id: 'coloracion', label: 'Coloración', photos: [
+        'https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+      ]
+    }
+  ];
+
+  function renderSections(list){
+    const $tabs = $('#servicios-tabs');
+    const $content = $('#servicios-content');
+    if(!$tabs.length || !$content.length) return;
+    $tabs.empty();
+    $content.empty();
+
+    list.forEach(function(section){
+      const $btn = $('<button/>', {
+        'class': 'servicio-tab',
+        'type': 'button',
+        'data-id': section.id,
+        'text': section.label,
+        'aria-expanded': 'false'
+      });
+
+      $btn.on('click', function(){ toggleSection(section.id, $(this)); });
+      $tabs.append($btn);
+
+      const $panel = $('<div/>', { 'class': 'servicio-panel', id: 'panel-' + section.id });
+      const $photosWrap = $('<div/>', { 'class': 'servicio-photos' });
+
+      (section.photos || []).forEach(function(src, idx){
+        const $photoDiv = $('<div/>', { 'class': 'servicio-photo' });
+        const $img = $('<img/>', { src: src || '', loading: 'lazy', alt: section.label + ' ' + (idx + 1) });
+        $photoDiv.append($img);
+        $photosWrap.append($photoDiv);
+      });
+
+      $panel.append($photosWrap);
+      $content.append($panel);
     });
   }
 
-  function next() {
-    current = (current + 1) % $imgs.length;
-    update();
+  function toggleSection(id, $btn){
+    const $panel = $('#panel-' + id);
+    if(!$panel.length) return;
+    const isOpen = $panel.hasClass('open');
+
+    if(isOpen){
+      // abrir imagen 
+
+      $panel.css('max-height', $panel[0].scrollHeight + 'px');
+      requestAnimationFrame(function(){
+        $panel.css('max-height', '0px');
+      });
+      $panel.removeClass('open');
+      $btn.removeClass('active').attr('aria-expanded', 'false');
+    } else {
+      // cerrar imagenes anteriores 
+      $('.servicio-panel.open').not($panel).each(function(){
+        const $other = $(this);
+        $other.css('max-height', $other[0].scrollHeight + 'px');
+        requestAnimationFrame(function(){ $other.css('max-height', '0px'); });
+        $other.removeClass('open');
+      });
+      $('.servicio-tab.active').not($btn).removeClass('active').attr('aria-expanded', 'false');
+
+      // abrir selecion 
+      $panel.addClass('open');
+      requestAnimationFrame(function(){
+        const h = $panel[0].scrollHeight + 'px';
+        $panel.css('max-height', h);
+      });
+
+      // ajustar altura 
+      $panel.find('img').each(function(){
+        if(!this.complete){
+          $(this).on('load', function(){
+            const updated = $panel[0].scrollHeight + 'px';
+            $panel.css('max-height', updated);
+          });
+        }
+      });
+
+      $btn.addClass('active').attr('aria-expanded', 'true');
+    }
   }
 
-  function prev() {
-    current = (current - 1 + $imgs.length) % $imgs.length;
-    update();
+  function addSection(section){
+    if(!section || !section.id) return;
+    sections.push($.extend({ photos: [] }, section));
+    renderSections(sections);
   }
 
-  $('.coverflow-btn.next').click(next);
-  $('.coverflow-btn.prev').click(prev);
+  function addPhoto(sectionId, photoUrl){
+    const s = sections.find(function(x){ return x.id === sectionId; });
+    if(!s) return;
+    s.photos.push(photoUrl);
+    renderSections(sections);
+  }
 
-  timer = setInterval(next, 3500);
-  update();
-});
+  $(function(){ renderSections(sections); });
 
+  window.__servicios = { sections: sections, render: renderSections, addSection: addSection, addPhoto: addPhoto };
+})(jQuery);
 </script>
 </body>
 </html>
