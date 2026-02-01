@@ -495,7 +495,7 @@
 </head>
 <body>
     <!-- Botón de WhatsApp fijo -->
-    <a href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="whatsapp-fijo">
+    <a href="https://wa.me/77993528?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="whatsapp-fijo">
         <i class="bi bi-whatsapp"></i>
     </a>
 
@@ -517,7 +517,7 @@
                 
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item">
-                        <a href="#inicio" class="nav-link">Incio</a>
+                        <a href="#inicio" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a href="#servicios" class="nav-link">Servicios</a>
@@ -553,7 +553,8 @@
 
 <div class="coverflow-carousel">
   <div class="coverflow-track">
-    <img src="img/entrada.jpg" class="coverflow-img" alt="Imagen 1">
+    <img src="img/entra
+    da.jpg" class="coverflow-img" alt="Imagen 1">
     <img src="img/pasillo.jpeg" class="coverflow-img" alt="Imagen 2">
     <img src="img/patio.jpg" class="coverflow-img" alt="Imagen 3">
     <img src="img/patio2.jpg" class="coverflow-img" alt="Imagen 4">
@@ -771,9 +772,8 @@
                         <i class="bi bi-clock ubicacion-icono"></i>
                         <div>
                             <strong>Horario:</strong><br>
-                            Lunes a Viernes: 9:00 AM - 7:00 PM<br>
-                            Sabados: 9:00 AM - 5:00 PM<br>
-                            Domingos: 10:00 AM - 3:00 PM
+                            Lunes a Sabado: 9:00 AM - 8:00 PM<br>
+                            Domingos: 10:00 AM - 1:00 PM
                         </div>
                     </div>
                     
@@ -781,13 +781,15 @@
                         <i class="bi bi-telephone ubicacion-icono"></i>
                         <div>
                             <strong>Telefono:</strong><br>
-                            (123) 456-7890
+                           70359344-77993528<br>
+                           4255924
+
                         </div>
                     </div>
                 </div>
                 
                 <div class="ubicacion-mapa">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888215052005!2d-99.17391958509318!3d19.427020746124408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1643833977559!5m2!1ses!2smx" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://maps.app.goo.gl/uz9PjLBPFv4ueWkx8" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -814,15 +816,15 @@
                     <h3 class="footer-titulo">Contacto</h3>
                     <div class="footer-telefono">
                         <i class="bi bi-telephone"></i>
-                        <span>123-456-7890</span>
+                        <span>70359344-77993528</span>
                     </div>
-                    <p><i class="bi bi-envelope"></i> info@bellezastudio.com</p>
-                    <p><i class="bi bi-geo-alt"></i> Avenida Principal #123, Ciudad</p>
+                    <p><i class="bi bi-envelope"></i> anamariaherediazenteno.com@gmail.com</p>
+                    <p><i class="bi bi-geo-alt"></i> Av.Chapare, Sacaba </p>
                 </div>
             </div>
             
             <div class="footer-copyright">
-                <p>&copy; 2023 BellezaStudio. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Salón Anita. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
