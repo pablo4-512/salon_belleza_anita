@@ -644,7 +644,7 @@
                     <div class="logo-placeholder">
                         <img src="estilos/salon-anita.png" alt="Logo Salon Anita" class="logo-img">
                     </div>
-                    <div class="logo-texto">Salon Belleza<span>Anita</span></div>
+                    <div class="logo-texto">Salon de Belleza<span>Anita</span></div>
                 </div>
                 
                 <div class="menu-hamburguesa" id="menu-hamburguesa">
@@ -654,6 +654,9 @@
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item">
                         <a href="#inicio" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#promociones" class="nav-link">Promociones</a>
                     </li>
                     <li class="nav-item">
                         <a href="#servicios" class="nav-link">Servicios</a>
@@ -692,12 +695,12 @@
 
     <div class="coverflow-carousel">
     <div class="coverflow-track">
-        <img src="img/entrada.jpg" class="coverflow-img" alt="Imagen 1">
-        <img src="img/pasillo.jpeg" class="coverflow-img" alt="Imagen 2">
-        <img src="img/patio.jpg" class="coverflow-img" alt="Imagen 3">
-        <img src="img/patio2.jpg" class="coverflow-img" alt="Imagen 4">
-        <img src="img/vista-superior.jpg" class="coverflow-img" alt="Imagen 5">
-        <img src="img/vistasala.jpeg" class="coverflow-img" alt="Imagen 6">
+        <img src="fotos/img_maquillaje_1.jpg" class="coverflow-img" alt="Imagen 1">
+        <img src="fotos/img_peinado_2.jpg" class="coverflow-img" alt="Imagen 2">
+        <img src="fotos/img_corona_3.jpg" class="coverflow-img" alt="Imagen 3">
+        <img src="fotos/img_ondasazules_4.jpg" class="coverflow-img" alt="Imagen 4">
+        <img src="fotos/img_peinadorosa_5.jpg" class="coverflow-img" alt="Imagen 5">
+        <img src="fotos/img_modelos_6.jpg" class="coverflow-img" alt="Imagen 6">
     </div>
 
     <button class="coverflow-btn prev">&#10094;</button>
@@ -715,20 +718,22 @@
     <!-- Promociones Section -->
     <section class="seccion promociones" id="promociones">
         <div class="contenedor">
-            <h2 class="seccion-titulo">Promociones</h2>
-            <p class="seccion-subtitulo">Ofertas especiales que puedes acumular y modificar fácilmente</p>
+            <h2 class="seccion-titulo">PROMOCIONES</h2>
+            <p class="seccion-subtitulo">OFERTA CARNAVALERA</p>
 
             <div class="promo-grid" id="promo-grid">
                 <!-- Contenido por defecto (se reemplaza si JS está activo) -->
                 <div class="promo-card">
                     <div>
-                        <div class="promo-tag">20% OFF</div>
+                        <div class="promo-tag">20% de Descuento</div>
                         <div class="promo-title">Cortes y Peinados</div>
-                        <div class="promo-desc">Aplica en servicios selectos durante el mes.</div>
+                        <div class="promo-desc">Exclusivo para bailarines<br>
+                                                Aplica en servicios selectos durante el mes.
+                    </div>
                     </div>
                     <div class="promo-meta">
-                        <div class="promo-price">Desde 250 bs</div>
-                        <a href="#contacto" class="promo-btn">Reservar</a>
+                        <div class="promo-price">Desde 50 bs</div>
+                        <a href="https://wa.me/77993528?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="promo-btn">Reservar</a>
                     </div>
                 </div>
 
@@ -739,7 +744,7 @@
                         <div class="promo-desc">Incluye prueba y servicio el día del evento.</div>
                     </div>
                     <div class="promo-meta">
-                        <div class="promo-price">1800 bs</div>
+                        <div class="promo-price">1200 bs</div>
                         <a href="#contacto" class="promo-btn">Más info</a>
                     </div>
                 </div>
@@ -766,15 +771,15 @@
                     <div class="servicio-icono">
                         <i class="bi bi-palette"></i>
                     </div>
-                    <h3 class="servicio-titulo"></h3>
-                    <p class="servicio-descripcion"></p>
+                    <h3 class="servicio-titulo">Coloracion</h3>
+                    <p class="servicio-descripcion">Técnicas de coloración avanzada, mechas, reflejos y tratamientos para mantener tu cabello sano y radiante</p>
                 </div>
                 
                 <div class="servicio-card">
                     <div class="servicio-icono">
                         <i class="bi bi-hand-thumbs-up"></i>
                     </div>
-                    <h3 class="servicio-titulo"></h3>
+                    <h3 class="servicio-titulo">Manicura & Pedicura</h3>
                     <p class="servicio-descripcion"></p>
                 </div>
                 
@@ -782,15 +787,15 @@
                     <div class="servicio-icono">
                         <i class="bi bi-droplet"></i>
                     </div>
-                    <h3 class="servicio-titulo">Coloracion</h3>
-                    <p class="servicio-descripcion">Técnicas de coloración avanzada, mechas, reflejos y tratamientos para mantener tu cabello sano y radiante.</p>
+                    <h3 class="servicio-titulo">Tratamientos Capilares</h3>
+                    <p class="servicio-descripcion"></p>
                 </div>
                 
                 <div class="servicio-card">
                     <div class="servicio-icono">
                         <i class="bi bi-flower1"></i>
                     </div>
-                    <h3 class="servicio-titulo"></h3>
+                    <h3 class="servicio-titulo">Peinados & Maqullaje</h3>
                     <p class="servicio-descripcion"></p>
                 </div>
                 
@@ -918,9 +923,10 @@
                     </div>
                 </div>
                 
-                <div class="ubicacion-mapa">
-                    <iframe src="https://maps.app.goo.gl/uz9PjLBPFv4ueWkx8" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+               <div class="ubicacion-mapa">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121834.92931609029!2d-66.17793651637733!3d-17.3953894811544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e3715fe3f9d7ef%3A0x54dd782c82267b89!2sSal%C3%B3n%20Anita!5e0!3m2!1ses-419!2sbo!4v1770043638682!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
             </div>
         </div>
     </section>
@@ -1039,7 +1045,7 @@
 <script>
   (function(){
     const promos = [
-      { tag: '20% OFF', title: 'Cortes y Peinados', desc: 'Aplica en servicios selectos durante el mes.', price: 'Desde $250', cta: 'Reservar', ctaHref: '#contacto' },
+      { tag: '20% de descuento', title: 'Maquillaje y Peinados', desc: 'Exclusivo para bailarines. Aplica en servicios selectos durante el mes.', price: 'Desde $50', cta: 'Reservar', ctaHref: "https://wa.me/77993528?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="promo-btn" },
       { tag: 'Paquete', title: 'Novias', desc: 'Incluye prueba y servicio el día del evento.', price: '$1800', cta: 'Más info', ctaHref: '#contacto' }
       // Añade o quita objetos aqui para modificar las promociones facilmente
     ];
