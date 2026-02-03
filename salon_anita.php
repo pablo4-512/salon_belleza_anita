@@ -290,6 +290,43 @@
             max-height: 360px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.08);
         }
+        .servicio-catalogo {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 10px 25px;
+    font-size: 0.9rem;
+}
+
+.servicio-item {
+    display: flex;
+    justify-content: space-between;
+    background: #fafafa;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    transition: 0.2s;
+}
+
+.servicio-item:hover {
+    background: #000;
+    color: white;
+}
+
+.servicio-item span {
+    color: #333;
+}
+
+.servicio-item:hover span,
+.servicio-item:hover strong {
+    color: white;
+}
+
+.servicio-item strong {
+    font-weight: 600;
+}
+
+
 
         @media (max-width: 768px) {
             .servicio-photo img { max-height: 280px; }
@@ -671,7 +708,7 @@
                         <a href="#nosotros" class="nav-link">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#ubicacion" class="nav-link">Ubicacion</a>
+                        <a href="#ubicacion" class="nav-link">Ubicación</a>
                     </li>
                     <li class="nav-item">
                         <a href="#contacto" class="nav-link">Contacto</a>
@@ -752,71 +789,159 @@
         </div>
     </section>
 
-    <!-- Servicios Section -->
-    <section class="seccion" id="servicios">
-        <div class="contenedor">
-            <h2 class="seccion-titulo">Nuestros Servicios</h2>
-            <p class="seccion-subtitulo">Lo Mejor para Ti</p>
-            
-            <div class="servicios-contenedor">
-                <div class="servicio-card">
-                    <div class="servicio-icono">
-                        <i class="bi bi-scissors"></i>
-                    </div>
-                    <h3 class="servicio-titulo">Cortes & Peinados</h3>
-                    <p class="servicio-descripcion">Transformamos tu look con cortes modernos y peinados elegantes para cualquier ocasión. Nuestros estilistas están capacitados en las últimas tendencias.</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <div class="servicio-icono">
-                        <i class="bi bi-palette"></i>
-                    </div>
-                    <h3 class="servicio-titulo">Coloracion</h3>
-                    <p class="servicio-descripcion">Técnicas de coloración avanzada, mechas, reflejos y tratamientos para mantener tu cabello sano y radiante</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <div class="servicio-icono">
-                        <i class="bi bi-hand-thumbs-up"></i>
-                    </div>
-                    <h3 class="servicio-titulo">Manicura & Pedicura</h3>
-                    <p class="servicio-descripcion"></p>
-                </div>
-                
-                <div class="servicio-card">
-                    <div class="servicio-icono">
-                        <i class="bi bi-droplet"></i>
-                    </div>
-                    <h3 class="servicio-titulo">Tratamientos Capilares</h3>
-                    <p class="servicio-descripcion"></p>
-                </div>
-                
-                <div class="servicio-card">
-                    <div class="servicio-icono">
-                        <i class="bi bi-flower1"></i>
-                    </div>
-                    <h3 class="servicio-titulo">Peinados & Maqullaje</h3>
-                    <p class="servicio-descripcion"></p>
-                </div>
-                
-                <div class="servicio-card">
-                    <div class="servicio-icono">
-                        <i class="bi bi-star"></i>
-                    </div>
-                    <h3 class="servicio-titulo">Servicios Especiales</h3>
-                    <p class="servicio-descripcion">Paquetes para novias, tratamientos corporales y servicios a domicilio para ocasiones especiales.</p>
-                </div>
-<!-- Agregar mas tarjetas de servicio segun sea necesario -->
+  <!-- Servicios Section -->
+<section class="seccion" id="servicios">
+    <div class="contenedor">
+        <h2 class="seccion-titulo">Nuestros Servicios</h2>
+        <p class="seccion-subtitulo">Lo Mejor para Ti</p>
+        
+        <div class="servicios-contenedor">
 
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="bi bi-scissors"></i>
+                </div>
+                <h3 class="servicio-titulo">Cortes & Cepillado</h3>
+                <p class="servicio-descripcion">
+                    Transformamos tu look con cortes modernos y cepillados profesionales adaptados a tu estilo y tipo de cabello.
+                </p>
 
-
-
-
-
+                <!-- Catálogo interno -->
+               <div class="servicio-catalogo">
+    <div class="servicio-item">
+        <span>Corte dama</span>
+        <strong>30 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Corte varon</span>
+        <strong>25 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Corte infantil</span>
+        <strong>20 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Cepillado liso</span>
+        <strong>40 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Cepillado con ondas</span>
+        <strong>50 Bs</strong>
+    </div>
+</div>
 
             </div>
+
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="bi bi-palette"></i>
+                </div>
+                <h3 class="servicio-titulo">Coloración</h3>
+                <p class="servicio-descripcion">
+                    Técnicas avanzadas de coloración con productos de alta calidad para lograr tonos vibrantes y duraderos.
+                </p>
+
+               <div class="servicio-catalogo">
+    <div class="servicio-item">
+        <span>Tinte completo</span>
+        <strong>120 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Mechas</span>
+        <strong>250 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Balayage</span>
+        <strong>300 Bs</strong>
+    </div>
+    <div class="servicio-item">
+        <span>Reflejos</span>
+        <strong>180 Bs</strong>
+    </div>
+</div>
+
+            </div>
+
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                </div>
+                <h3 class="servicio-titulo">Manicura & Pedicura</h3>
+                <p class="servicio-descripcion">
+                    Cuidado profesional para tus manos y pies con técnicas modernas y acabados elegantes.
+                </p>
+
+                <div class="servicio-catalogo">
+                    <span>Manicure clásico</span>
+                    <span>Pedicure spa</span>
+                    <span>Uñas acrílicas</span>
+                    <span>Gel semipermanente</span>
+                    <span>Decoración nail art</span>
+                </div>
+            </div>
+
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="bi bi-droplet"></i>
+                </div>
+                <h3 class="servicio-titulo">Tratamientos Capilares</h3>
+                <p class="servicio-descripcion">
+                    Tratamientos intensivos para hidratar, reparar y fortalecer tu cabello con productos profesionales.
+                </p>
+
+                <div class="servicio-catalogo">
+                    <span>Hidratación profunda</span>
+                    <span>Botox capilar</span>
+                    <span>Keratina</span>
+                    <span>Reconstrucción</span>
+                    <span>Tratamiento anticaída</span>
+                </div>
+            </div>
+
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="bi bi-flower1"></i>
+                </div>
+                <h3 class="servicio-titulo">Peinados & Maquillaje</h3>
+                <p class="servicio-descripcion">
+                    Peinados y maquillaje profesional para eventos, fiestas y ocasiones especiales.
+                </p>
+
+                <div class="servicio-catalogo">
+                    <span>Peinados sociales</span>
+                    <span>Peinados de novia</span>
+                    <span>Maquillaje social</span>
+                    <span>Maquillaje profesional</span>
+                    <span>Pruebas de maquillaje</span>
+                </div>
+            </div>
+
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="bi bi-star"></i>
+                </div>
+                <h3 class="servicio-titulo">Servicios Especiales</h3>
+                <p class="servicio-descripcion">
+                    Paquetes exclusivos para eventos, atención personalizada y servicios a domicilio.
+                </p>
+
+                <div class="servicio-catalogo">
+                    <span>Paquete novia</span>
+                    <span>Paquete quinceañera</span>
+                    <span>Eventos especiales</span>
+                    <span>Servicio a domicilio</span>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Galeria de Servicios Section -->
     <section class="seccion galeria" id="galeria-servicios">
