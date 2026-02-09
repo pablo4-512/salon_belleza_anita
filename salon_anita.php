@@ -277,19 +277,30 @@
         }
 
         .servicio-photos {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
 
-        .servicio-photo img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
-            max-height: 360px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        }
+.servicio-photo {
+    aspect-ratio: 1 / 1; /* cuadrados */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+.servicio-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* llena sin deformar */
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.servicio-photo img:hover {
+    transform: scale(1.05);
+}
+
         .servicio-catalogo {
     margin-top: 12px;
     display: grid;
@@ -463,6 +474,70 @@
             .promo-card { padding: 12px; min-height: 100px; }
         }
         
+        
+    /*section nosostros*/
+.nosotros {
+    background: var(--color-secundario);
+    padding: 70px 0;
+}
+.nosotros .seccion-titulo::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: var(--color-accento);
+    margin-top: 10px;
+}
+
+.nosotros-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.nosotros-texto {
+    max-width: 520px;
+}
+
+.nosotros-descripcion {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--color-texto);
+}
+
+.nosotros-historia {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+
+.nosotros-valores {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.valor-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.06);
+    flex: 1;
+}
+
+
+
+
         /* Ubicacion Section */
         .ubicacion {
             background-color: var(--color-secundario);
@@ -642,7 +717,23 @@
                 font-size: 25px;
             }
         }
-        
+     @media (max-width: 900px) {
+    .nosotros-contenedor {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .nosotros-imagen img {
+        max-width: 380px;
+        margin: auto;
+    }
+}
+.seccion {
+    clear: both;
+    position: relative;
+}
+
+
         @media (max-width: 480px) {
             .contenedor {
                 width: 95%;
@@ -777,6 +868,20 @@
                 <div class="promo-card">
                     <div>
                         <div class="promo-tag">Paquete</div>
+                        <div class="promo-title">Quinceañera</div>
+                        <div class="promo-desc">Incluye prueba dia anterior<br>
+                                                Dentro tiene servicios como maquillaje, peinado, uñas y mucho más .
+                    </div>
+                    </div>
+                    <div class="promo-meta">
+                        <div class="promo-price">Desde 600 bs</div>
+                        <a href="https://wa.me/77993528?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="promo-btn">Reservar</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div>
+                        <div class="promo-tag">Paquete</div>
                         <div class="promo-title">Novias</div>
                         <div class="promo-desc">Incluye prueba y servicio el día del evento.</div>
                     </div>
@@ -806,7 +911,7 @@
                     Transformamos tu look con cortes modernos y cepillados profesionales adaptados a tu estilo y tipo de cabello.
                 </p>
 
-                <!-- Catálogo interno -->
+                <!-- Catálogo interno 
                <div class="servicio-catalogo">
     <div class="servicio-item">
         <span>Corte dama</span>
@@ -827,7 +932,14 @@
     <div class="servicio-item">
         <span>Cepillado con ondas</span>
         <strong>50 Bs</strong>
-    </div>
+    </div> -->
+     <div class="servicio-catalogo">
+                    <span>Corte Dama</span>
+                    <span>Corte Varon</span>
+                    <span>Corte infantil</span>
+                    <span>Cepillado Liso</span>
+                    <span>Cepilllado con Ondas</span>
+                </div>
 </div>
 
             </div>
@@ -841,7 +953,7 @@
                 <p class="servicio-descripcion">
                     Técnicas avanzadas de coloración con productos de alta calidad para lograr tonos vibrantes y duraderos.
                 </p>
-
+<!-- Catálogo interno 
                <div class="servicio-catalogo">
     <div class="servicio-item">
         <span>Tinte completo</span>
@@ -858,7 +970,14 @@
     <div class="servicio-item">
         <span>Reflejos</span>
         <strong>180 Bs</strong>
-    </div>
+    </div>-->
+    <div class="servicio-catalogo">
+                    <span>Raices</span>
+                    <span>Tinte Completo</span>
+                    <span>Mechas</span>
+                    <span>Balayange</span>
+                    <span>Reflejos</span>
+                </div>
 </div>
 
             </div>
@@ -876,9 +995,7 @@
                 <div class="servicio-catalogo">
                     <span>Manicure clásico</span>
                     <span>Pedicure spa</span>
-                    <span>Uñas acrílicas</span>
                     <span>Gel semipermanente</span>
-                    <span>Decoración nail art</span>
                 </div>
             </div>
 
@@ -896,7 +1013,6 @@
                     <span>Hidratación profunda</span>
                     <span>Botox capilar</span>
                     <span>Keratina</span>
-                    <span>Reconstrucción</span>
                     <span>Tratamiento anticaída</span>
                 </div>
             </div>
@@ -947,7 +1063,7 @@
     <section class="seccion galeria" id="galeria-servicios">
         <div class="contenedor">
             <h2 class="seccion-titulo">Galeria de Servicios</h2>
-            <p class="seccion-subtitulo">Selecciona una categoría para ver sus fotos</p>
+            <p class="seccion-subtitulo">Selecciona una categoría para ver algunos de nuestros trabajos</p>
 
             <div class="servicios-tabs" id="servicios-tabs" role="tablist" aria-label="Categorias de servicios">
                 <!-- Botones renderizados por JS -->
@@ -956,12 +1072,6 @@
             <div class="servicios-content" id="servicios-content">
                 <!-- Panels renderizados por JS; cada panel contiene fotos en vertical -->
             </div> 
-
-
-
-
-
-
 
             </div>
         </div>
@@ -975,32 +1085,65 @@
             
             <div class="galeria-estilo-contenedor">
                 <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Corte cabello mujer" class="galeria-estilo-img">
+                    <img  src="fotos/img_maquillaje_1.jpg" alt="maquillaje mujer" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maquillaje artistico" class="galeria-estilo-img">
+                    <img src="fotos/img_rulos_7.jpg" alt="rulos artistico" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Uñas decoradas 2" class="galeria-estilo-img">
+                    <img src="fotos/img_rayitos_10.jpg" alt="prima" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1596703923338-48f1c07e4f2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Peinado recogido" class="galeria-estilo-img">
+                    <img src="fotos/img_peinado_2.jpg" alt="Peinado recogido" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1580618864180-f6d7d39b8ff6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Coloracion roja" class="galeria-estilo-img">
+                    <img src="fotos/img_peinadorosa_5.jpg" alt="peinado rojo" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1557170336-a4d03c8c41f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tratamiento capilar" class="galeria-estilo-img">
+                    <img src="fotos/img_trenzas_8.jpg" alt="trenzas " class="galeria-estilo-img">
                 </div>
-                <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1560851248-6c2f83c1c8b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maquillaje de noche" class="galeria-estilo-img">
-                </div>
-                <div class="galeria-estilo-item">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Servicio spa" class="galeria-estilo-img">
-                </div>
+               
 
                 <!-- Agregar mas items segun sea necesario -->
+</div>
+<!-- Nosotros Section -->
+<section class="seccion nosotros" id="nosotros">
+    <div class="contenedor nosotros-contenedor">
+        
+        <div class="nosotros-texto">
+    <h2 class="seccion-titulo">ACERCA DE NOSOTROS</h2>
+    <p class="seccion-subtitulo">Nuestra historia y pasión</p>
 
+            <p class="nosotros-descripcion">
+                En <strong>Salón Anita</strong> nos dedicamos a ofrecer servicios de belleza de alta calidad,
+                combinando técnicas modernas con un trato cálido y personalizado.  
+                Nuestro objetivo es realzar tu belleza natural y brindarte una experiencia única.
+            </p>
+
+            <p class="nosotros-historia">
+                Nuestro salón fue fundado por Doña Anita hace más de 15 años, convirtiéndose en un referente
+                en la comunidad. A lo largo de los años hemos crecido, innovado y capacitado a nuestro equipo
+                para ofrecer siempre lo mejor a nuestras clientas.
+            </p>
+        </div>
+<div class="nosotros-valores">
+    <div>
+        <h4>Misión</h4>
+        <p>Brindar servicios de belleza con calidad, confianza y profesionalismo.</p>
+    </div>
+    <div>
+        <h4>Visión</h4>
+        <p>Ser el salón líder en Sacaba y referente en tendencias de belleza.</p>
+    </div>
+    <div class="nosotros-imagen">
+            <img src="fotos/img_modelos_6.jpg" alt="Dueña del salón Anita">
+        </div>
+</div>
+
+        
+
+    </div>
+</section>
 
 
 
@@ -1022,9 +1165,9 @@
                     <div class="ubicacion-detalle">
                         <i class="bi bi-geo-alt ubicacion-icono"></i>
                         <div>
-                            <strong>Direccion:</strong><br>
-                            Avenida Principal #123,<br>
-                            Colonia Centro, Ciudad, CP 12345
+                            <strong>Dirección:</strong><br>
+                            Avenida Chapare y Maximiliano Kolbe<br>
+                            Sacaba, Quintanilla
                         </div>
                     </div>
                     
@@ -1041,7 +1184,7 @@
                         <i class="bi bi-telephone ubicacion-icono"></i>
                         <div>
                             <strong>Telefono:</strong><br>
-                           70359344-77993528<br>
+                           70359344 - 77993528<br>
                            4255924
 
                         </div>
@@ -1079,8 +1222,13 @@
                         <i class="bi bi-telephone"></i>
                         <span>70359344-77993528</span>
                     </div>
-                    <p><i class="bi bi-envelope"></i> anamariaherediazenteno.com@gmail.com</p>
-                    <p><i class="bi bi-geo-alt"></i> Av.Chapare, Sacaba </p>
+                    <div class="footer-telefono">
+                        <i class="bi bi-envelope"></i>
+                        <span>anamariaherediazenteno.com@gmail.com</span>
+                    </div>
+                    <div class="footer-telefono">
+                        <i class="bi bi-geo-alt"></i> Av.Chapare, Sacaba 
+                    </div>
                 </div>
             </div>
             
@@ -1170,7 +1318,7 @@
 <script>
   (function(){
     const promos = [
-      { tag: '20% de descuento', title: 'Maquillaje y Peinados', desc: 'Exclusivo para bailarines. Aplica en servicios selectos durante el mes.', price: 'Desde $50', cta: 'Reservar', ctaHref: "https://wa.me/77993528?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="promo-btn" },
+      { tag: '20% de descuento', title: 'Maquillaje y Peinados', desc: 'Exclusivo para bailarines. Aplica en servicios selectos durante el mes.', price: 'Desde $50', cta: 'Reservar', ctaHref: 'https://wa.me/77993528?text=Hola,%20me%20gustaría%20agendar%20una%20cita' target="_blank" class="promo-btn" },
       { tag: 'Paquete', title: 'Novias', desc: 'Incluye prueba y servicio el día del evento.', price: '$1800', cta: 'Más info', ctaHref: '#contacto' }
       // Añade o quita objetos aqui para modificar las promociones facilmente
     ];
@@ -1211,25 +1359,25 @@
 
 <script>
 (function($){
-  const sections = [
-    { id: 'peinados', label: 'Peinados', photos: [
-        'https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-      ]
-    },
-    { id: 'unas', label: 'Uñas', photos: [
-        'https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-      ]
-    },
-    { id: 'maquillaje', label: 'Maquillaje', photos: [
-        'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-      ]
-    },
-    { id: 'coloracion', label: 'Coloración', photos: [
-        'https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-      ]
-    }
-  ];
+const sections = [
+  { id: 'peinados', label: 'Peinados', photos: [
+      'fotos/img_rulos_7.jpg',
+      'fotos/img_ondasazules_4.jpg',
+      'fotos/img_peinadorosa_5.jpg',
+      'fotos/img_peinado_2.jpg',
+      'fotos/img_trenzas_8.jpg'
+  ]},
+  { id: 'unas', label: 'Uñas', photos: [
+      'fotos/img_francesas_9.jpg'
+  ]},
+  { id: 'maquillaje', label: 'Maquillaje', photos: [
+      'fotos/img_maquillaje_1.jpg'
+  ]},
+  { id: 'coloracion', label: 'Coloración', photos: [
+      'fotos/img_rayitos_10.jpg'
+  ]}
+];
+
 
   function renderSections(list){
     const $tabs = $('#servicios-tabs');
