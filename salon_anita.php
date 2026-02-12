@@ -1085,22 +1085,28 @@
             
             <div class="galeria-estilo-contenedor">
                 <div class="galeria-estilo-item">
-                    <img  src="fotos/img_maquillaje_1.jpg" alt="maquillaje mujer" class="galeria-estilo-img">
+                    <img  src="fotos/img_pcaido_13.jpeg" alt="maquillaje mujer" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="fotos/img_rulos_7.jpg" alt="rulos artistico" class="galeria-estilo-img">
+                    <img src="fotos/img_niña_14.jpeg" alt="rulos artistico" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="fotos/img_rayitos_10.jpg" alt="prima" class="galeria-estilo-img">
+                    <img src="fotos/img_superp_15.jpeg" alt="prima" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="fotos/img_peinado_2.jpg" alt="Peinado recogido" class="galeria-estilo-img">
+                    <img src="fotos/img_brillos_16.jpeg" alt="Peinado recogido" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="fotos/img_peinadorosa_5.jpg" alt="peinado rojo" class="galeria-estilo-img">
+                    <img src="fotos/img_sonrisa_17.jpeg" alt="peinado rojo" class="galeria-estilo-img">
                 </div>
                 <div class="galeria-estilo-item">
-                    <img src="fotos/img_trenzas_8.jpg" alt="trenzas " class="galeria-estilo-img">
+                    <img src="fotos/img_ruloscorona_18.jpeg" alt="trenzas " class="galeria-estilo-img">
+                </div>
+                <div class="galeria-estilo-item">
+                    <img src="fotos/img_mverde_21.jpeg" alt="trenzas " class="galeria-estilo-img">
+                </div>
+                <div class="galeria-estilo-item">
+                    <img src="fotos/img_ondasazules_4.jpg" alt="trenzas " class="galeria-estilo-img">
                 </div>
                
 
@@ -1361,20 +1367,38 @@
 (function($){
 const sections = [
   { id: 'peinados', label: 'Peinados', photos: [
-      'fotos/img_rulos_7.jpg',
-      'fotos/img_ondasazules_4.jpg',
-      'fotos/img_peinadorosa_5.jpg',
-      'fotos/img_peinado_2.jpg',
-      'fotos/img_trenzas_8.jpg'
+      'fotos/img_naranja_19.jpeg',
+      'fotos/img_nina_14.jpeg',
+      'fotos/img_pmorado_26.jpeg',
+      'fotos/img_trenzas_27.jpeg',
+      'fotos/img_pcaido_13.jpeg',
+      'fotos/img_recogido_30.jpeg'
   ]},
   { id: 'unas', label: 'Uñas', photos: [
-      'fotos/img_francesas_9.jpg'
+      'fotos/img_francesas_9.jpg',
+      'fotos/img_unasflor_33.jpeg',
+      'fotos/img_unasrojas_34.jpeg',
+      'fotos/img_unaslimon_35.jpeg',
+      'fotos/img_unasrosa_35.jpeg',
+      'fotos/img_unascadenanegra_36.jpeg'
   ]},
   { id: 'maquillaje', label: 'Maquillaje', photos: [
-      'fotos/img_maquillaje_1.jpg'
+      'fotos/img_maquillaje_1.jpg',
+      'fotos/img_ojos_11.jpeg',
+      'fotos/img_morenada_20.jpeg',
+      'fotos/img_mverde_21.jpeg',
+      'fotos/img_mcalavera_24.jpeg',
+      'fotos/img_mrosa_25.jpeg'
   ]},
   { id: 'coloracion', label: 'Coloración', photos: [
-      'fotos/img_rayitos_10.jpg'
+      'fotos/img_rayitos_10.jpg',
+      'fotos/img_balanye_12.jpeg',
+      'fotos/img_ondas_23.jpeg',
+      'fotos/img_cenizo_28.jpeg',
+      'fotos/img_reflejos_31.jpeg',
+      'fotos/img_revive_32.jpeg'
+
+      
   ]}
 ];
 
